@@ -3,10 +3,16 @@
 const yts = require( 'yt-search' )
 
 async function handler (req, res) {
+  console.log( 'api called ended' )
   res.statusCode = 200
 
   const r = await yts( 'superman' )
-  res.json({ name: r.videos[ 0 ].title })
+  const title = r.videos[ 0 ].title
+  console.log( 'title: ' + title )
+
+  res.json({ name: title })
+
+  console.log( 'api called ended' )
 }
 
 export default handler
