@@ -2,7 +2,7 @@
 
 const yts = require( 'yt-search' )
 
-async function handler (req, res) => {
+async function handler (req, res) {
   res.statusCode = 200
 
   const r = await yts( 'superman' )
