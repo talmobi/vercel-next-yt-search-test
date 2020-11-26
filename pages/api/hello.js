@@ -2,12 +2,11 @@
 
 const yts = require( 'yt-search' )
 
-export default (req, res) => {
+async function handler (req, res) => {
   res.statusCode = 200
 
-  ;( async function () {
-    const r = await yts( 'superman' )
-    res.json({ name: r.videos[ 0 ].title })
-  } )()
-
+  const r = await yts( 'superman' )
+  res.json({ name: r.videos[ 0 ].title })
 }
+
+export default handler
