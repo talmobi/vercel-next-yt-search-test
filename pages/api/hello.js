@@ -6,9 +6,14 @@ async function handler (req, res) {
   console.log( 'api called ended' )
   res.statusCode = 200
 
-  const r = await yts( 'superman' )
-  const title = r.videos[ 0 ].title
-  console.log( 'title: ' + title )
+  let title
+  try {
+    const r = await yts( 'superman' )
+    title = r.videos[ 0 ].title
+    console.log( 'title: ' + title )
+  } catch ( e ) {
+    console.log( e )
+  }
 
   res.json({ name: title })
 
