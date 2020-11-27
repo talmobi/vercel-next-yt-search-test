@@ -11,6 +11,6 @@
     "next": "10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "yt-search": "~2.5.0"
+    "yt-search": "github:talmobi/yt-search#talmobi/fix/vercel-next-test"
   }
 }
