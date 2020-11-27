@@ -1,7 +1,16 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const yts = require( 'yt-search' )
+
+export async function getStaticProps() {
+  const r = await yts( 'superman' )
+  const title = r.videos[ 0 ].title
+
+  return { props: { title } }
+}
+
+export default function Home( { title } ) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +22,8 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <div>{ 'title: ' + title }</div>
 
         <p className={styles.description}>
           Get started by editing{' '}
