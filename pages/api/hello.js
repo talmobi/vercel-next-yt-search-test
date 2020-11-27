@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const yts = require( 'yt-search' )
+import * as yts from 'yt-search'
 
 async function handler (req, res) {
   console.log( 'api called ended' )
